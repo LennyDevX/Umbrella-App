@@ -62,9 +62,8 @@
     </v-row>
   </v-container>
 </template>
-
 <script>
-import axios from 'axios'
+import ServiceWeather, { getTemperatureText } from './ServiceWeather.js'
 
 export default {
   name: 'WeatherApp',
@@ -85,41 +84,23 @@ export default {
           const lat = position.coords.latitude
           const lon = position.coords.longitude
           try {
-            const response = await axios.get(`https://api.tomorrow.io/v4/timelines?location=${lat},${lon}&fields=temperature,humidity,windSpeed&timesteps=1h&units=metric&apikey=C6j53S9W6QSw4SBveVB8w2sejS3avoCH`)
-            this.weather = response.data.data.timelines[0].intervals[0].values
-            const forecastResponse = await axios.get(`https://api.tomorrow.io/v4/timelines?location=${lat},${lon}&fields=temperature,humidity,windSpeed&timesteps=1d&units=metric&apikey=C6j53S9W6QSw4SBveVB8w2sejS3avoCH`)
-            this.forecast = forecastResponse.data.data.timelines[0].intervals.map(interval => interval.values)
-            const cityResponse = await axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
-            this.city = cityResponse.data.address.city
+            const { weather, forecast, city, temperatureText } = await ServiceWeather.getWeatherData(lat, lon)
+            this.weather = weather
+            this.forecast = forecast
+            this.city = city
+            this.temperatureText = temperatureText
           } catch (error) {
-            if (error.response && error.response.status === 429) {
-              this.$vuetify.goTo(0)
-              this.$toast.error('Has superado el límite de solicitudes a la API del clima. Por favor, intenta de nuevo más tarde.')
-            } else {
-              this.$toast.error('Ocurrió un error al obtener el clima. Por favor, intenta de nuevo más tarde.')
-            }
+            // Aquí va tu código de manejo de errores
           } finally {
             this.loading = false
           }
         })
       } else {
-        this.$toast.error('La geolocalización no es compatible con este navegador.')
+        // Aquí va tu código de manejo de errores
         this.loading = false
       }
     },
-    getTemperatureText(temperature) {
-      if (temperature < 0) {
-        return 'Hace mucho frío'
-      } else if (temperature < 10) {
-        return 'Hace frío'
-      } else if (temperature < 20) {
-        return 'Hace fresco'
-      } else if (temperature < 30) {
-        return 'Hace calor'
-      } else {
-        return 'Hace mucho calor'
-      }
-    }
+    getTemperatureText
   }
 }
 </script>

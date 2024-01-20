@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 WeatherAPI.js
+
+# API credentials
+src/components/API/Weather.js

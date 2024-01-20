@@ -1,10 +1,6 @@
 // ServiceWeather.js
 import axios from 'axios'
-import { API_KEY } from '../../WeatherAPI';
-
-
-const WEATHER_API_URL = 'https://api.tomorrow.io/v4/timelines'
-const CITY_API_URL = 'https://nominatim.openstreetmap.org/reverse?format=json'
+import { API_KEY, WEATHER_API_URL, CITY_API_URL } from './API/Weather';
 
 export function getTemperatureText(temperature) {
     if (temperature < 0) {

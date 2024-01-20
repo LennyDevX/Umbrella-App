@@ -65,6 +65,7 @@
 <script>
 import ServiceWeather, { getTemperatureText } from './ServiceWeather.js'
 
+
 export default {
   name: 'WeatherApp',
   data() {

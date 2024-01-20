@@ -24,3 +24,4 @@ WeatherAPI.js
 
 # API credentials
 src/components/API/Weather.js
+.env

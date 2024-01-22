@@ -1,20 +1,6 @@
 // ServiceWeather.js
 import axios from 'axios'
-import { API_KEY, WEATHER_API_URL, CITY_API_URL } from './API/Weather';
-
-export function getTemperatureText(temperature) {
-    if (temperature < 0) {
-        return 'Hace mucho frío'
-    } else if (temperature < 10) {
-        return 'Hace frío'
-    } else if (temperature < 20) {
-        return 'Hace fresco'
-    } else if (temperature < 30) {
-        return 'Hace calor'
-    } else {
-        return 'Hace mucho calor'
-    }
-}
+import { API_KEY, WEATHER_API_URL, CITY_API_URL, GEOCODING_API_URL } from './Weather';
 
 export default {
     async getWeatherData(lat, lon) {
@@ -26,9 +12,21 @@ export default {
             const weather = weatherData.data.timelines[0].intervals[0].values
             const forecast = forecastData.data.timelines[0].intervals.map(interval => interval.values)
             const city = cityData.address.city
-            const temperatureText = getTemperatureText(weather.temperature)
 
-            return { weather, forecast, city, temperatureText }
+            return { weather, forecast, city }
+        } catch (error) {
+            console.error(error)
+            throw error
+        }
+    },
+    async getCoordinates(city) {
+        try {
+            const url = `${GEOCODING_API_URL}&q=${encodeURIComponent(city)}&limit=1`
+            console.log(`Making request to: ${url}`)
+            const { data } = await axios.get(url)
+            const lat = data[0].lat
+            const lon = data[0].lon
+            return { lat, lon }
         } catch (error) {
             console.error(error)
             throw error

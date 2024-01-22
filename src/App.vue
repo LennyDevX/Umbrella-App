@@ -2,14 +2,14 @@
   <v-app class="container">
     <v-main class="containerS">
       <Navbar />
-      <Weather />
+      <router-view /> <!-- Añade este componente para usar Vue Router -->
     </v-main>
   </v-app>
 </template>
 
 <script setup>
 import Navbar from './components/Navbar.vue';
-import Weather from './components/Weather.vue';
+// No necesitas importar el componente Weather aquí porque será renderizado por Vue Router
 </script>
 
 <style>
@@ -18,9 +18,14 @@ import Weather from './components/Weather.vue';
   margin: auto;
   width: 100%;
   height: 100%;
+  
 
 }
 .containerS {
-  background-color:rgba(88, 182, 240, 0.662)
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: #adacacc4;
+  color: white;
 }
 </style>

@@ -47,7 +47,7 @@
 <!-- Resto del código -->
 
 <script>
-import ServiceWeather from '../API/ServiceWeather.js'
+import ServiceWeather from '../../API/ServiceWeather'
 
 export default {
     data() {

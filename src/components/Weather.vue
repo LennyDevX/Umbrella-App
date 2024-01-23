@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import ServiceWeather from '../API/ServiceWeather.js'
+import ServiceWeather from '../../API/ServiceWeather'
 
 export default {
   name: 'WeatherApp',

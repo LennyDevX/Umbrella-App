@@ -20,5 +20,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-src/API/*
+/API/*
 # API credentials

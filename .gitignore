@@ -20,6 +20,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-WeatherAPI.js
-
+src/API/*
 # API credentials

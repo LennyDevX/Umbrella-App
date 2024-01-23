@@ -20,7 +20,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="6">
-                        <v-card v-if="weather" class="custom-card-info ma-2 pa-4">
+                        <v-card v-if="weather" class="custom-card-info">
                             <h2 class="pa-3">Ubicación: {{ city }}</h2>
                             <v-row class="pa-3">
                                 <v-col cols="4">
@@ -90,34 +90,52 @@ export default {
 
 
 .custom-card-info {
+    margin:25px 25px;
     background-color: transparent;
     box-sizing: border-box;
     box-shadow: inset 0 0 0 1px #000000;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.55);
+    box-shadow: 5px 7px 15px 5px rgba(0,0,0,0.55);
     border-radius: 10px;
+    animation: appear 1s ease-out; /* Agrega esta línea */
+}
 
+@keyframes appear { /* Agrega este bloque */
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .custom-card {
     background-color: transparent;
     color: black;
     border-radius: 10px;
-    box-shadow: inset 0 0 0 1px #000000;
     transition: 1s;
     &:hover {
-        background-color: rgba(97, 96, 96, 0.269);
+        background-color: rgba(232, 236, 174, 0.269);
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.363); /* Sombra inicial */
         transform: scale(0.95);
         transition: 1s;
     }
 }
 .custom-button {
-    color: white;
-    border: 2px solid rgba(0, 0, 0, 0.6); /* Borde negro semi-transparente */
-    border-radius: 9px;
-    background-color: black; /* Fondo transparente */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave al cambiar el color de fondo y la sombra */
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Sombra inicial */
+  background-color: transparent;
+  box-sizing: border-box;
+  box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.379);
+  border-radius: 10px;
+  color: black;
+  transition: 1s;
+  &:hover {
+    background-image: linear-gradient(to right, #b9d1d4aa, #b2ebf28f, #f3e784aa, #fff9c4);
+    box-shadow: 4px 4px 4px rgba(224, 162, 17, 0.726); /* Sombra inicial */
+    transform: scale(0.98);
+    transition: 1s;
+  }
+
 }
 
 .custom-button:hover {

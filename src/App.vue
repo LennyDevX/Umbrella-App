@@ -1,13 +1,16 @@
 <template>
   <v-app class="container">
-    <v-main class="containerS" style="margin-bottom: 60px;">
+    
+    <v-main class="containerS">
       <Navbar />
-      <FooterComponent />
-
       <CardComponent :cards="cards" />
       <router-view />
+
     </v-main>
+    <FooterComponent />
+
   </v-app>
+
 </template>
 
 <script setup>
@@ -40,7 +43,7 @@ const cards = [
   font-weight: bold;
   margin: auto;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(163, 162, 162, 0.5), rgba(128, 128, 128, 0.5), rgba(118, 117, 117, 0.201));
+  background-image: linear-gradient(to right, #fcf29a92, #b2ebf279, #f4e87f80, #fff9c47f);
   color: white;
 
   height: 100%;

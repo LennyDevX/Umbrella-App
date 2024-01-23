@@ -1,6 +1,6 @@
 // ServiceWeather.js
 import axios from 'axios'
-import { API_KEY, WEATHER_API_URL, CITY_API_URL, GEOCODING_API_URL } from './Weather';
+import { API_KEY, WEATHER_API_URL, CITY_API_URL, GEOCODING_API_URL, OPENCAGE_API_KEY, OPENCAGE_API_URL } from './Weather';
 
 export default {
     async getWeatherData(lat, lon) {
@@ -31,5 +31,20 @@ export default {
             console.error(error)
             throw error
         }
-    }
+    },
+    async getCityInfo(lat, lon) {
+        try {
+          const response = await axios.get(`${OPENCAGE_API_URL}?q=${lat}+${lon}&key=${OPENCAGE_API_KEY}`);
+          const data = response.data.results[0];
+          const formattedAddress = data.formatted;
+          const components = data.components;
+          const annotations = data.annotations;
+          const geometry = data.geometry;
+          const bounds = data.bounds;
+          return { formattedAddress, components, annotations, geometry, bounds };
+        } catch (error) {
+          console.error('No se pudo obtener la información de la ciudad:', error);
+          throw error;
+        }
+      }
 }

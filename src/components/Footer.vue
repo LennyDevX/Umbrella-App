@@ -22,16 +22,15 @@ export default {
 
 <style scoped>
 .footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    display: flex;
+    height: 100px;
     justify-content: center;
 }
 
 .flex-container {
+
     display: flex;
-    justify-content: center;
+
     align-items: center;
     flex-direction: column;
     width: 100%;

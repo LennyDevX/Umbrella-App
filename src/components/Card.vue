@@ -41,10 +41,9 @@ a{
     color: rgb(0, 0, 0);
     transition: 1s;
     box-sizing: border-box;
-    box-shadow: inset 0 0 0 1px #000000;
+    background-image: linear-gradient(to right, #e4f2f572, #b2ebf2a4, #b6eaf181, #b7eaf192);
     &:hover {
-        background-color: rgba(215, 164, 105, 0.596);
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Sombra inicial */
+        box-shadow: 4px 4px 4px rgba(224, 162, 17, 0.726); /* Sombra inicial */
         transform: scale(0.98);
         transition: 1s;
     }

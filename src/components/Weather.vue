@@ -6,18 +6,12 @@
           <v-icon left class="mr-2">mdi-weather-cloudy</v-icon>
           Ver Clima
         </v-btn>
-        <router-link to="/city">
-          <v-btn color="black">
-            <v-icon left class="mr-2">mdi-city</v-icon>
-            Buscar Ciudad
-          </v-btn>
-        </router-link>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12">
         <v-progress-circular v-if="loading" indeterminate color="green"></v-progress-circular>
-        <v-card v-else-if="weather" class="info pa-3 ma-3 bg-black opacity-75">
+        <v-card v-else-if="weather" class="custom-info pa-3 ma-3">
           <h2>Ubicación: {{ city }}</h2>
           <v-row>
             <v-col cols="4">
@@ -37,7 +31,7 @@
             Descripción: {{ weather.weather[0].description }}
           </p>
         </v-card>
-        <v-card v-if="forecast" class="info pa-3 ma-3 bg-black opacity-75">
+        <v-card v-if="forecast" class="custom-info pa-3 ma-3 ">
           <v-card-title>Previsión para los próximos días</v-card-title>
           <v-card-text>
             <div v-for="(day, index) in forecast" :key="index">
@@ -65,7 +59,7 @@
 </template>
 
 <script>
-import ServiceWeather from '../components/API/ServiceWeather.js'
+import ServiceWeather from '../API/ServiceWeather.js'
 
 export default {
   name: 'WeatherApp',
@@ -124,11 +118,12 @@ export default {
   align-items: center;
 }
 
-.info {
-    background-color: rgba(0, 0, 0, 0.7) !important;
+.custom-info {
+    background-color: transparent;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 1px #000000;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.55);
+    border-radius: 10px;
 }
 
-.opacity-75 {
-    opacity: 0.75;
-}
 </style>

@@ -17,7 +17,7 @@
       <v-menu bottom left>
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on">
-            v0.5
+            V 0.7
           </v-btn>
         </template>
         <v-list class="pa-0 mt-5">

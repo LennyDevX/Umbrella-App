@@ -1,13 +1,13 @@
 <template>
   <v-app class="container">
-    
     <v-main class="containerS">
       <Navbar />
       <CardComponent :cards="cards" />
+
       <router-view />
 
     </v-main>
-    <FooterComponent />
+    <footer-component />
 
   </v-app>
 
@@ -29,21 +29,18 @@ const cards = [
 
 
 <style>
-
 .container {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
   margin: auto;
   width: 100%;
   height: 100%;
 
 }
 .containerS {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
   margin: auto;
   width: 100%;
-  background-image: linear-gradient(to right, #fcf29a92, #b2ebf279, #f4e87f80, #fff9c47f);
+  background-image: linear-gradient(to right, #eec6f96c, #a8dbf679, #fef7c180, #f9e6e694);
   color: white;
 
   height: 100%;

@@ -138,9 +138,9 @@ export default {
 }
 
 .custom-info {
-    background-color: transparent;
+    background-image: linear-gradient(to right, #d1a5fb30, #9078fb3b, #abfae151);
     box-sizing: border-box;
-    box-shadow: 4px 4px 3px 2px rgba(0,0,0,0.55);
+    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.45);
     border-radius: 10px;
     animation: appear 1s ease-out; /* Agrega esta línea */
 
@@ -161,13 +161,12 @@ export default {
 .custom-button {
   background-color: transparent;
   box-sizing: border-box;
-  box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.379);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.379);
   border-radius: 10px;
   color: black;
   transition: 1s;
   &:hover {
-    background-image: linear-gradient(to right, #b9d1d4aa, #b2ebf28f, #f3e784aa, #fff9c4);
-    box-shadow: 4px 4px 4px rgba(224, 162, 17, 0.726); /* Sombra inicial */
+    background-image: linear-gradient(to right, #ca98f853, #8368fa61, #9beed46b);
     transform: scale(0.98);
     transition: 1s;
   }

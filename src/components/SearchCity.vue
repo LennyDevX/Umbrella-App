@@ -14,7 +14,7 @@
                                 placeholder="Buscar ciudad"
                             ></v-text-field>
                             <div class="d-flex justify-center mb-5">
-                                <v-btn class="custom-button" @click="buscarCiudad">Buscar Ciudad</v-btn>
+                                <v-btn class="custom-search-button" @click="buscarCiudad">Buscar Ciudad</v-btn>
                                 <v-progress-circular v-if="loading" class="ml-3" color="black" indeterminate></v-progress-circular>
                             </div>
                         </v-card>
@@ -91,12 +91,10 @@ export default {
 
 .custom-card-info {
     margin:25px 25px;
-    background-color: transparent;
-    box-sizing: border-box;
-    box-shadow: inset 0 0 0 1px #000000;
-    box-shadow: 5px 7px 15px 5px rgba(0,0,0,0.55);
-    border-radius: 10px;
-    animation: appear 1s ease-out; /* Agrega esta línea */
+    background-image: linear-gradient(to right, #d1a5fb30, #9078fb3b, #abfae151);
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.55);
+    border-radius: 7px;
+    animation: appear 1.1s ease-out; /* Agrega esta línea */
 }
 
 @keyframes appear { /* Agrega este bloque */
@@ -116,29 +114,23 @@ export default {
     border-radius: 10px;
     transition: 1s;
     &:hover {
-        background-color: rgba(232, 236, 174, 0.269);
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.363); /* Sombra inicial */
-        transform: scale(0.95);
+        background-color: rgba(211, 209, 209, 0.233);
+        transform: scale(0.99);
         transition: 1s;
     }
 }
-.custom-button {
-  background-color: transparent;
-  box-sizing: border-box;
-  box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.379);
-  border-radius: 10px;
-  color: black;
-  transition: 1s;
-  &:hover {
-    background-image: linear-gradient(to right, #b9d1d4aa, #b2ebf28f, #f3e784aa, #fff9c4);
-    box-shadow: 4px 4px 4px rgba(224, 162, 17, 0.726); /* Sombra inicial */
-    transform: scale(0.98);
-    transition: 1s;
-  }
-
+.custom-search-button {
+    background-color: transparent;
+    border-radius: 10px;
+    color: black;
+    transition: 0.8s;
+    &:hover {
+        background-image: linear-gradient(to right, #ca98f830, #8368fa49, #94f3d540);
+        color: black;
+        transform: scale(0.97);
+        transition: 0.8s;
+    }
 }
 
-.custom-button:hover {
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Sombra más oscura al pasar el ratón */
-}
+
 </style>

@@ -9,6 +9,7 @@ import { registerPlugins } from '@/plugins'
 
 // Components
 import App from './App.vue'
+import './styles.jsx'
 import 'weather-icons/css/weather-icons.css';
 
 // Composables
@@ -24,3 +25,4 @@ registerPlugins(app)
 app.use(router)
 
 app.mount('#app')
+

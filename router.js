@@ -3,15 +3,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Weather from './src/components/Weather.vue'
 import BuscarCiudad from './src/components/SearchCity.vue'
-import HeroSection from './src/components/Card.vue'
+import Home from './src/components/Home.vue'
 import Tabs from './src/components/Tabs.vue'
 
 const routes = [
     {
         path: '/',
         name: 'Home',
-        component: HeroSection
+        component: Home
     },
+
     {
         path: '/weather',
         name: 'Weather',

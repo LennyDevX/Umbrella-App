@@ -1,5 +1,5 @@
-<template>
-  <v-app-bar app color="black">
+<template >
+  <v-app-bar color="black" >
     <v-toolbar-items class="">
       <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
     </v-toolbar-items>
@@ -17,7 +17,7 @@
       <v-menu bottom left>
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on">
-            V 0.7
+            V 0.8
           </v-btn>
         </template>
         <v-list class="pa-0 mt-5">
@@ -69,5 +69,9 @@ export default {
 .link {
   text-decoration: none;
   color: white;
+}
+
+.custom-navbar {
+  background-color: #0000005d;
 }
 </style>

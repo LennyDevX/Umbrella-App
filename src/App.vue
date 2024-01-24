@@ -7,7 +7,7 @@
       <router-view />
 
     </v-main>
-    <footer-component />
+      <footer-component />
 
   </v-app>
 
@@ -29,6 +29,7 @@ const cards = [
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 .container {
   margin: auto;
   width: 100%;

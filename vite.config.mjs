@@ -29,7 +29,8 @@ export default defineConfig({
   define: { 'process.env': {} },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      'vue-router': 'vue-router/dist/vue-router.esm-bundler.js' // Añade este alias
     },
     extensions: [
       '.js',

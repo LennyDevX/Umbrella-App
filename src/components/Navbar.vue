@@ -1,13 +1,15 @@
-<template>
-  <v-app-bar app color="black">
+<template >
+  <v-app-bar color="black" >
     <v-toolbar-items class="">
       <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
     </v-toolbar-items>
-    <v-toolbar-title>Umbrella ☂️ </v-toolbar-title>
+    <router-link to="/" class="link">
+      <v-toolbar-title>Umbrella ☂️ </v-toolbar-title>
+    </router-link>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn text>
-        Explorar otras ciudades
+        How it works?
       </v-btn>
       <v-btn text>
         Github
@@ -15,7 +17,7 @@
       <v-menu bottom left>
         <template v-slot:activator="{ on, attrs }">
           <v-btn text v-bind="attrs" v-on="on">
-            v0.2
+            V 0.8
           </v-btn>
         </template>
         <v-list class="pa-0 mt-5">
@@ -43,9 +45,9 @@ export default {
   data: () => ({
     drawer: false,
     items: [
-      { title: 'Explorar otras ciudades' },
-      { title: 'Github' },
-      { title: 'Bajo el capó' },
+      { title: 'Under Hood' },
+      { title: 'API Tomorrow' },
+      { title: 'Last Release' },
     ],
   }),
   methods: {
@@ -62,5 +64,14 @@ export default {
 }
 .right-drawer > .v-list {
   direction: ltr;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.custom-navbar {
+  background-color: #0000005d;
 }
 </style>

@@ -5,9 +5,19 @@
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": { "distDir": "dist" }
+        },
+        {
+            "src": "api/ServiceWeather.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "api/ServiceWeather.js",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
+        { "src": "/api/ServiceWeather/(.*)", "dest": "/api/ServiceWeather.js" },
+        { "src": "/api/Weather/(.*)", "dest": "/api/Weather.js" },
         { "src": "/(.*)", "dest": "/$1" },
         { "src": "/", "dest": "/index.html" }
     ]
